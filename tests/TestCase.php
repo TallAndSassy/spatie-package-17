@@ -3,9 +3,9 @@
 namespace Spatie\Skeleton\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Route;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Spatie\Skeleton\SkeletonServiceProvider;
-use Illuminate\Support\Facades\Route;
 
 class TestCase extends Orchestra
 {
@@ -18,7 +18,7 @@ class TestCase extends Orchestra
             fn (string $modelName) => 'Spatie\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
 
-         // route prefix
+        // route prefix
         // this must match/sync with what was put in
         // tests/Feature/Http/Controllers/SkeletonControllerTest.php/setup
         // Hint: 'Blade Prefix' (all lowercase, no spaces) is a substition string when using this as a template

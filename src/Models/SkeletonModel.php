@@ -10,7 +10,8 @@ class SkeletonModel extends Model
     public $fillable = ['name'];
     public $table = 'skeleton';
 
-    public function getUpperCasedName() : string {
+    public function getUpperCasedName() : string
+    {
         return strtoupper($this->name);
     }
 }

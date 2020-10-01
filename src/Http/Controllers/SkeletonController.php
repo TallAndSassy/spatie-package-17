@@ -9,6 +9,4 @@ class SkeletonController
     {
         return 'Hello from: '.__METHOD__;
     }
-
-
 }

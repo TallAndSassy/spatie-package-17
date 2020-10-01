@@ -3,10 +3,10 @@
 namespace Spatie\Skeleton;
 
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Skeleton\Commands\SkeletonCommand;
 use Spatie\Skeleton\Http\Controllers\SkeletonController;
-use Illuminate\Support\Facades\Route;
 
 class SkeletonServiceProvider extends ServiceProvider
 {
@@ -28,7 +28,7 @@ class SkeletonServiceProvider extends ServiceProvider
             );
 
             $migrationFileName = 'create_skeleton_table.php';
-            if (!$this->migrationFileExists($migrationFileName)) {
+            if (! $this->migrationFileExists($migrationFileName)) {
                 $this->publishes(
                     [
                         __DIR__ . "/../database/migrations/{$migrationFileName}.stub" => database_path(
@@ -56,7 +56,6 @@ class SkeletonServiceProvider extends ServiceProvider
 //            You might need to add a manual step to rename the file
             function (string $prefix) {
                 Route::prefix($prefix)->group(
-
                     function () {
                         // Sample routes that only show while developing...
                         if (App::environment(['local', 'testing'])) {
